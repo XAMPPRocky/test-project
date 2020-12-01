@@ -1,16 +1,10 @@
 [package]
-name = "test-windows"
+name = "shader"
 version = "0.1.0"
 authors = ["Erin Power <erin.power@embark-studios.com>"]
 edition = "2018"
 
-
-[lib]
-crate-type = ["dylib"]
-
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-
-[build-dependencies]
-spirv-builder = { git = "https://github.com/EmbarkStudios/rust-gpu", branch = "vuild-system" }
+spirv-std = { git = "https://github.com/EmbarkStudios/rust-gpu", branch = "vuild-system" }

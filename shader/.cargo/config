@@ -1,0 +1,5 @@
+[build]
+target = "spirv-unknown-unknown"
+rustflags = ["-Zcodegen-backend=/Users/erin.power/src/test-windows/target/debug/build/test-windows-a8337596cf82c315/out/rust-gpu/target/debug/librustc_codegen_spirv.dylib"]
+
+
