@@ -506,7 +506,7 @@ dependencies = [
 [[package]]
 name = "spirv-builder"
 version = "0.1.0"
-source = "git+https://github.com/EmbarkStudios/rust-gpu?branch=vuild-system#127179126cfa61c4642b2548e7dae0dfd65627e7"
+source = "git+https://github.com/EmbarkStudios/rust-gpu?branch=vuild-system#1305ca7267788895709886356184aeb61478156c"
 dependencies = [
  "cargo-sysroot",
  "eyre",
