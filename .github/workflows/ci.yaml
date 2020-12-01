@@ -1,0 +1,24 @@
+name: Rust
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        $oldAndroidPath = $env:ANDROID_HOME
+        $sdk_root = "C:\Android"
+        New-Item -Path $sdk_root -ItemType SymbolicLink -Value $oldAndroidPath
+        echo "ANDROID_SDK_ROOT=$sdk_root" >> $env:GITHUB_ENV
+        echo "ANDROID_NDK_ROOT=$sdk_root\ndk-bundle" >> $env:GITHUB_ENV
+        # Update legacy path for ndk-build:
+        echo "ANDROID_HOME=$sdk_root" >> $env:GITHUB_ENV
+        # Unset legacy paths:
+        echo "ANDROID_NDK_HOME=" >> $env:GITHUB_ENV
+        echo "ANDROID_NDK_PATH=" >> $env:GITHUB_ENV
+    - run: rustup target add aarch64-linux-android wasm32-unknown-unknown
+    - run: cargo build --target aarch64-linux-android
