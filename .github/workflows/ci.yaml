@@ -20,5 +20,6 @@ jobs:
         # Unset legacy paths:
         echo "ANDROID_NDK_HOME=" >> $env:GITHUB_ENV
         echo "ANDROID_NDK_PATH=" >> $env:GITHUB_ENV
+    - run: rustup component add rust-src
     - run: rustup target add aarch64-linux-android wasm32-unknown-unknown
     - run: cargo build --target aarch64-linux-android
