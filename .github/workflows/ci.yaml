@@ -23,4 +23,5 @@ jobs:
     - run: rustup default nightly
     - run: rustup component add rust-src
     - run: rustup target add aarch64-linux-android wasm32-unknown-unknown
-    - run: cargo build --target aarch64-linux-android
+    - run: cargo install cargo-apk
+    - run: cargo apk build
