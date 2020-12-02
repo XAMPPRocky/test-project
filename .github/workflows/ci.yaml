@@ -20,7 +20,7 @@ jobs:
         # Unset legacy paths:
         echo "ANDROID_NDK_HOME=" >> $env:GITHUB_ENV
         echo "ANDROID_NDK_PATH=" >> $env:GITHUB_ENV
-    - run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    - run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -- -y
     - run: rustup --version
     - run: rustup default nightly-2020-11-24
     - run: rustup component add rust-src rustc-dev llvm-tools-preview
