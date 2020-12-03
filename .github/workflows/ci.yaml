@@ -8,6 +8,7 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+    - run: rustup --version
     - uses: actions/checkout@v2
     - run: |
         $oldAndroidPath = $env:ANDROID_HOME
